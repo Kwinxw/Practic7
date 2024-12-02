@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Practic5.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Practic5.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\1.webp",
+      "PackagePath": "staticwebassets\\images\\1.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\2587d16c7035c155ba1bee3bb6d5ded2.jpg",
+      "PackagePath": "staticwebassets\\images\\2587d16c7035c155ba1bee3bb6d5ded2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\9255700.png",
+      "PackagePath": "staticwebassets\\images\\9255700.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\add-remove-user-icon-outline-add-remove-user-vector-icon-web-design-isolated-white-background-color-flat_96318-85924.avif",
+      "PackagePath": "staticwebassets\\images\\add-remove-user-icon-outline-add-remove-user-vector-icon-web-design-isolated-white-background-color-flat_96318-85924.avif"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\image.webp",
+      "PackagePath": "staticwebassets\\images\\image.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Practic6-main\\src\\wwwroot\\images\\добавить-значок-вектор-пользователя-для-запроса-и-дизайна-друга-173053593.webp",
+      "PackagePath": "staticwebassets\\images\\добавить-значок-вектор-пользователя-для-запроса-и-дизайна-друга-173053593.webp"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Practic5.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Practic5.props",
+      "PackagePath": "build\\Practic5.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Practic5.props",
+      "PackagePath": "buildMultiTargeting\\Practic5.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Practic5.props",
+      "PackagePath": "buildTransitive\\Practic5.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

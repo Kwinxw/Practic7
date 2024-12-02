@@ -1,0 +1,22 @@
+﻿@page "/Users"
+@using Microsoft.EntityFrameworkCore;
+@using Practic5.Models;
+@inject KwinxwPractic3Context context
+
+<h3>Пользователи</h3>
+
+@foreach (var user in users)
+{
+    <h3>Номер пользователя: @user.UserId </h3>
+    <p>Имя пользователя: @user.Username </p>
+    <p>Почта пользователя: @user.Email</p>
+    <p>Пароль пользователя: @user.PasswordHash </p>
+    <hr />
+}
+@code {
+    private List<User> users = new List<User>();
+    protected override async Task OnInitializedAsync()
+    {
+        users = await context.Users.ToListAsync();
+    }
+}

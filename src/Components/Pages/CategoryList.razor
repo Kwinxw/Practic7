@@ -1,0 +1,20 @@
+﻿@page "/Categories"
+@using Microsoft.EntityFrameworkCore;
+@using Practic5.Models;
+@inject KwinxwPractic3Context context
+
+<h3>Категории</h3>
+
+@foreach (var categorie in categories)
+{
+    <h3>Номер категории: @categorie.CategoryId </h3>
+    <p>Название: @categorie.Name </p>
+    <hr />
+}
+@code {
+    private List<Category> categories = new List<Category>();
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await context.Categories.ToListAsync();
+    }
+}

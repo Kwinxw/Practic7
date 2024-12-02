@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.AssemblyInfo.cs
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Practic5-main\src\obj\Debug\net8.0\Practic6.MvcApplicationPartsAssemblyInfo.cache

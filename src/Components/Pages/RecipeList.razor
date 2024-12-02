@@ -1,0 +1,22 @@
+﻿@page "/Recipes"
+@using Microsoft.EntityFrameworkCore;
+@using Practic5.Models;
+@inject KwinxwPractic3Context context
+
+<h3>Категории</h3>
+
+@foreach (var recipe in recipes)
+{
+    <h3>Номер категории: @recipe.RecipeId </h3>
+    <p>Номер пользователя: @recipe.UserId </p>
+    <p>Заголовок: @recipe.Title </p>
+    <p>Описание: @recipe.Description </p>
+    <hr />
+}
+@code {
+    private List<Recipe> recipes = new List<Recipe>();
+    protected override async Task OnInitializedAsync()
+    {
+        recipes = await context.Recipes.ToListAsync();
+    }
+}
