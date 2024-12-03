@@ -1,0 +1,43 @@
+﻿@page "/Users"
+@using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models
+
+@inject KwinxwPractic3Context context
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="12">
+            <MudText Typo="Typo.h3">Пользователи</MudText>
+        </MudItem>
+        @foreach (var user in users)
+        {
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard>
+                    <MudCardMedia Image="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" Alt="User Image" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="text-truncate">Номер пользователя: @user.UserId</MudText>
+                            <MudText Class="text-truncate"><strong>Имя пользователя:</strong> @user.Username</MudText>
+                            <MudText Class="text-truncate"><strong>Почта пользователя:</strong> @user.Email</MudText>
+                            <MudText Class="text-truncate"><strong>Пароль пользователя:</strong> @user.PasswordHash</MudText>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+        }
+    </MudGrid>
+</MudContainer>
+
+@code {
+    private List<User> users = new List<User>();
+    protected override async Task OnInitializedAsync()
+    {
+        users = await context.Users.ToListAsync();
+    }
+}
+
+<style>
+    .text-truncate {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>

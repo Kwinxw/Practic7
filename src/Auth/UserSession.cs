@@ -1,4 +1,4 @@
-﻿namespace Practic5.Auth
+﻿namespace BlazorApp1.Auth
 {
     public class UserSession
     {

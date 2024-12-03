@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Practic5.Models;
+namespace BlazorApp1.Models;
 
 public partial class Recipe
 {
@@ -25,11 +25,11 @@ public partial class Recipe
 
     public virtual User? DeletedByUser { get; set; }
 
-    public virtual ICollection<Photo> Photos { get; set; } = new List<Photo>();
+    public virtual ICollection<Photo> Photos { get; } = new List<Photo>();
 
-    public virtual ICollection<RecipeCategory> RecipeCategories { get; set; } = new List<RecipeCategory>();
+    public virtual ICollection<RecipeCategory> RecipeCategories { get; } = new List<RecipeCategory>();
 
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual ICollection<Review> Reviews { get; } = new List<Review>();
 
     public virtual User? User { get; set; }
 }

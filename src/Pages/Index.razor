@@ -1,0 +1,78 @@
+﻿@page "/"
+
+@using BlazorApp1.Auth;
+@using BlazorApp1.Models
+
+@inject IJSRuntime js
+@inject KwinxwPractic3Context Context
+
+<AuthorizeView>
+    <Authorized>
+        <MudText Typo="Typo.h4">Добро пожаловать, @context.User.Identity.Name!</MudText>
+        </Authorized>
+        <NotAuthorized>
+            <MudText Typo="Typo.h4">Авторизуйтесь для доступа!</MudText>
+        </NotAuthorized>
+    </AuthorizeView>
+
+    <AuthorizeView>
+        <Authorized>
+            <br /><br />
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="DisplayGreetingAlert">Поприветствовать!</MudButton>
+        </Authorized>
+    </AuthorizeView>
+
+    <MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard>
+                    <MudCardMedia Image="images/2587d16c7035c155ba1bee3bb6d5ded2.jpg" Height="140" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">Категории</MudText>
+                        <MudText Typo="Typo.body1">Изучите различные категории доступных рецептов.</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="Categories">Перейти</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard>
+                    <MudCardMedia Image="images/9255700.png" Height="140" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">Зарегистрироваться</MudText>
+                        <MudText Typo="Typo.body1">Зарегиструйтесь для обширного доступа.</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="register">Перейти</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard>
+                    <MudCardMedia Image="images/1.webp" Height="140" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6">Рецепты</MudText>
+                        <MudText Typo="Typo.body1">Откройте для себя вкусные и простые рецепты.</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="Recipes">Перейти</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+
+    @code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    private async Task DisplayGreetingAlert()
+    {
+        var authState = await authenticationState;
+        var message = $"Hello, {authState.User.Identity.Name}";
+        await js.InvokeVoidAsync("alert", message);
+    }
+}

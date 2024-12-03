@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Practic5.Models;
+namespace BlazorApp1.Models;
 
 public partial class Review
 {

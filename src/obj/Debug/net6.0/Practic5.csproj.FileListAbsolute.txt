@@ -1,8 +1,0 @@
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.AssemblyInfo.cs
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.RazorAssemblyInfo.cache
-C:\Users\user\Desktop\Practic6-main\src\obj\Debug\net6.0\Practic5.RazorAssemblyInfo.cs

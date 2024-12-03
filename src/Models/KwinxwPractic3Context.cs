@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Practic5.Models;
+namespace BlazorApp1.Models;
 
 public partial class KwinxwPractic3Context : DbContext
 {
@@ -20,6 +20,7 @@ public partial class KwinxwPractic3Context : DbContext
         return await Users.FirstOrDefaultAsync(u => u.Email == email && u.PasswordHash == password);
     }
 
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Photo> Photos { get; set; }
@@ -33,7 +34,7 @@ public partial class KwinxwPractic3Context : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=sql.bsite.net\\MSSQL2016;Database=kwinxw_Practic3;User Id=kwinxw_Practic3;Password=Vadim2006;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -74,7 +75,7 @@ public partial class KwinxwPractic3Context : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.DeletedAt).HasColumnType("datetime");
             entity.Property(e => e.DeletedByUserId).HasColumnName("DeletedByUserID");
-            entity.Property(e => e.IsDeleted).HasDefaultValue(false);
+            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
             entity.Property(e => e.Title).HasMaxLength(100);
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -141,8 +142,10 @@ public partial class KwinxwPractic3Context : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.DeletedAt).HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
-            entity.Property(e => e.IsDeleted).HasDefaultValue(false);
+            entity.Property(e => e.Firstname).HasMaxLength(50);
+            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
             entity.Property(e => e.PasswordHash).HasMaxLength(255);
+            entity.Property(e => e.Role).HasMaxLength(50);
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");

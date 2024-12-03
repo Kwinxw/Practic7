@@ -1,8 +1,8 @@
-﻿namespace Practic5.Models
+﻿namespace BlazorApp1.Models;
+
+public class ThemeManagerModel
 {
-    public class ThemeManagerModel
-    {
-        public bool IsDarkMode { get; set; }
-        public string PrimaryColor { get; set; }
-    }
+    public bool IsDarkMode { get; set; }
+    public string PrimaryColor { get; set; }
 }
+

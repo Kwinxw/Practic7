@@ -1,0 +1,55 @@
+﻿@page "/adduser"
+
+@using BlazorApp1.Models
+@inject KwinxwPractic3Context context
+
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudPaper Elevation="1" Class="pa-4">
+        <h3>Добавить Пользователя</h3>
+
+        <EditForm Model="newUser " OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <MudTextField @bind-Value="newUser .Firstname" Label="Имя" Required="true" />
+            <MudTextField @bind-Value="newUser .Username" Label="Ник" Required="true" />
+            <MudTextField @bind-Value="newUser .Email" Label="Электронная Почта" Type="email" Required="true" />
+            <MudTextField @bind-Value="newUser .PasswordHash" Label="Пароль" Type="password" Required="true" />
+
+            <MudButton Type="submit" Color="Color.Primary" Variant="Variant.Filled" Class="mt-4">Добавить</MudButton>
+        </EditForm>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private User newUser = new User();
+
+    private async Task HandleValidSubmit()
+    {
+        Console.WriteLine("HandleValidSubmit called");
+        Console.WriteLine($"Username: {newUser.Username}, Email: {newUser.Email}, Password: '{newUser.PasswordHash}'");
+
+        try
+        {
+            if (string.IsNullOrWhiteSpace(newUser.PasswordHash))
+            {
+                Console.WriteLine("Password cannot be empty.");
+                return;
+            }
+
+            newUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newUser.PasswordHash);
+            newUser.CreatedAt = DateTime.Now;
+
+            context.Users.Add(newUser);
+            await context.SaveChangesAsync();
+
+            Console.WriteLine("User  added successfully!");
+
+            newUser = new User();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error adding user: {ex.Message}");
+        }
+    }
+}
