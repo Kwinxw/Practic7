@@ -1,0 +1,23 @@
+﻿@page "/reviews"
+@using Microsoft.EntityFrameworkCore;
+@using BlazorApp1.Models;
+@inject KwinxwPractic3Context context
+
+<h3>Отзывы</h3>
+
+@foreach (var review in reviews)
+{
+    <h3>Номер категории: @review.ReviewId </h3>
+    <p>Номер рецепта: @review.RecipeId </p>
+    <p>Номер пользователя: @review.UserId </p>
+    <p>Рейтинг: @review.Rating </p>
+    <p>Комментарий: @review.Comment </p>
+    <hr />
+}
+@code {
+    private List<Review> reviews = new List<Review>();
+    protected override async Task OnInitializedAsync()
+    {
+        reviews = await context.Reviews.ToListAsync();
+    }
+}
